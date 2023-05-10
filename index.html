@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
     <title>Expenses App</title>
   </head>
   <body>
     <h1>Учет расходов</h1>
     <input 
         class="js-expense-input expense-input" 
-        type="text" 
+        type="number" 
     />
     <button class="js-button">Добавить</button>
+
+    <p>Лимит: <span class="js-limit"></span> руб.</p>
+    <p>Сумма: <span class="js-sum"></span> руб.</p>
+    <p>Статус: <span class="js-status status"></span></p>
+
+    <h2>История</h2>
+    <div class="js-history"></div>
 
     <script src="index.js"></script>
   </body>
