@@ -10,6 +10,7 @@ body {
 }
 
 .expenses-app {
+    width: 800px;
     padding: 80px 80px;
     border: 1px solid #545454;
 }
@@ -22,14 +23,14 @@ body {
 
 .expense-adder {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .expense-adder__input {
     display: block;
     margin-right: 20px;
     padding: 5px 10px;
-    width: 250px;
+    width: 300px;
     height: 30px;
     background-color: #3b364b;
     border: 1px solid #292634;
@@ -61,10 +62,28 @@ body {
     transition: all 0.5s;
 }
 
-.expense-adder__button:hover {
-    background-color: #5e5677;
-    border: 1px solid #5e5677;
+.expenses-category-wrap {
+    margin-bottom: 30px;
 }
+
+.expenses-category {
+    display: block;
+    padding: 5px 5px;
+    width: 320px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #3b364b;
+    border: 1px solid #292634;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.expense-adder__button:hover,
+.expenses-category:focus {
+    outline: 1px solid #292634;
+    background-color: #5e5677;
+  }
 
 .text-wrapper {
     display: flex;
@@ -75,7 +94,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 250px;
+    width: 300px;
 }
 
 .expenses-metrics__limit {
