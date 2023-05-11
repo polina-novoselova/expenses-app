@@ -2,14 +2,14 @@ const LIMIT = 10000;
 const CURRENCY = "руб.";
 const STATUS_IN_LIMIT = "доступен";
 const STATUS_OUT_OF_LIMIT = "превышен";
-const STATUS_OUT_OF_LIMIT_CLASSNAME = "status_red"
+const STATUS_OUT_OF_LIMIT_CLASSNAME = "expenses-metrics__status_red"
 
-const inputNode = document.querySelector(".js-expense-input");
-const buttonNode = document.querySelector(".js-button");
-const historyNode = document.querySelector(".js-history");
-const sumNode = document.querySelector(".js-sum");
-const limitNode = document.querySelector(".js-limit");
-const statusNode = document.querySelector(".js-status");
+const inputNode = document.querySelector(".js-expense-adder__input");
+const buttonNode = document.querySelector(".js-expense-adder__button");
+const historyNode = document.querySelector(".js-expenses-history__list-wrap");
+const sumNode = document.querySelector(".js-expenses-metrics__sum");
+const limitNode = document.querySelector(".js-expenses-metrics__limit");
+const statusNode = document.querySelector(".js-expenses-metrics__status");
 
 const expenses = [];
 
@@ -75,10 +75,10 @@ function renderHistory(expenses) {
   let expensesListHTML = "";
 
   expenses.forEach((element) => {
-    expensesListHTML += `<li>${element} ${CURRENCY}</li>`;
+    expensesListHTML += `<li class="expenses-history__item">${element} ${CURRENCY}</li>`;
   });
 
-  historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
+  historyNode.innerHTML = `<ol class="expenses-history__list">${expensesListHTML}</ol>`;
 };
 
 function renderSum(sum) {
