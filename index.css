@@ -1,154 +1,154 @@
 body {
-    margin: 0 auto;
-    padding: 100px 100px;
-    background-color: #343434;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 100px 100px;
+  background-color: #343434;
+  font-family: "Montserrat", sans-serif;
 }
 
 .main {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .expenses-app {
-    width: 800px;
-    padding: 80px 80px;
-    border: 1px solid #545454;
+  width: 800px;
+  padding: 80px 80px;
+  border: 1px solid #545454;
 }
 
 .expenses__title {
-    margin-bottom: 30px;
-    color: aliceblue;
-    font-size: 35px;
+  margin-bottom: 30px;
+  color: aliceblue;
+  font-size: 35px;
 }
 
 .expense-adder {
-    display: flex;
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .expense-adder__input {
-    display: block;
-    margin-right: 20px;
-    padding: 5px 10px;
-    width: 300px;
-    height: 30px;
-    background-color: #3b364b;
-    border: 1px solid #292634;
-    border-radius: 5px;
-    font-size: 18px;
-    color: white;
-    
+  display: block;
+  margin-right: 20px;
+  padding: 5px 10px;
+  width: 300px;
+  height: 30px;
+  background-color: #3b364b;
+  border: 1px solid #292634;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.5s;
 }
 
 .expense-adder__input::placeholder {
-    font-size: 16px;
-    color: #ffffff;
-    opacity: 0.5;
-  }
-
-  .expense-adder__input:focus {
-    outline: 1px solid #292634;
-    background-color: #5e5677;
-  }
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.5;
+}
 
 .expense-adder__button {
-    width: 150px;
-    cursor: pointer;
-    background-color: #3b364b;
-    border: 1px solid #292634;
-    border-radius: 5px;
-    font-size: 18px;
-    color: white;
-    transition: all 0.5s;
+  width: 150px;
+  outline: none;
+  cursor: pointer;
+  background-color: #3b364b;
+  border: 1px solid #292634;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.5s;
 }
 
 .expenses-category-wrap {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .expenses-category {
-    display: block;
-    padding: 5px 5px;
-    width: 320px;
-    height: 40px;
-    cursor: pointer;
-    background-color: #3b364b;
-    border: 1px solid #292634;
-    border-radius: 5px;
-    font-size: 18px;
-    color: white;
+  display: block;
+  padding: 5px 5px;
+  width: 320px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #3b364b;
+  border: 1px solid #292634;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.5s;
 }
 
 .expense-adder__button:hover,
-.expenses-category:focus {
-    outline: 1px solid #292634;
-    background-color: #5e5677;
-  }
+.expense-adder__button:focus,
+.expenses-category:hover,
+.expenses-category:focus,
+.expense-adder__input:hover, 
+.expense-adder__input:focus {
+  border: 1px solid #292634;
+  background-color: #5e5677;
+}
 
 .text-wrapper {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .expenses-metrics {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
 }
 
 .expenses-metrics__limit {
-    color: aliceblue;
-    font-size: 20px;
+  color: aliceblue;
+  font-size: 20px;
 }
 
 .expenses-metrics__sum {
-    color: aliceblue;
-    font-size: 20px;
+  color: aliceblue;
+  font-size: 20px;
 }
 
 .expenses-metrics__status {
-    color: aliceblue;
-    font-size: 20px;
+  color: aliceblue;
+  font-size: 20px;
 }
 
 .expenses-metrics__status_green {
-    padding: 0 5px;
-    background-color: #0e692c;
-    border-radius: 5px;
-    color: #ffffff;
-} 
+  padding: 0 5px;
+  background-color: #0e692c;
+  border-radius: 5px;
+  color: #ffffff;
+}
 
 .expenses-metrics__status_red {
-    padding: 0 5px;
-    background-color: #841010;
-    border-radius: 5px;
-    color: #ffffff;
+  padding: 0 5px;
+  background-color: #841010;
+  border-radius: 5px;
+  color: #ffffff;
 }
 
 .expenses-history {
-
 }
 
 .expenses-history__title {
-    margin-bottom: 10px;
-    color: aliceblue;
-    font-size: 20px;
+  margin-bottom: 10px;
+  color: aliceblue;
+  font-size: 20px;
 }
 
 .expenses-history__list-wrap {
-    margin-left: 22px;
+  margin-left: 22px;
 }
 
 /* Класс для списка ol в JS */
-.expenses-history__list  {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.expenses-history__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Класс для элемента li списка в JS */
 .expenses-history__item {
-    color: aliceblue;
-    font-size: 20px;
+  color: aliceblue;
+  font-size: 20px;
 }
