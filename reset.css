@@ -27,6 +27,7 @@ time, mark, audio, video {
 
 a, p, input, button, select, h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+	line-height: 30px;
 }
 
 /* HTML5 display-role reset for older browsers */

@@ -2,7 +2,7 @@ const LIMIT = 10000;
 const CURRENCY = "руб.";
 const STATUS_IN_LIMIT = "доступен";
 const STATUS_OUT_OF_LIMIT = "превышен";
-const STATUS_OUT_OF_LIMIT_CLASSNAME = "expenses-metrics__status_red"
+const STATUS_OUT_OF_LIMIT_CLASSNAME = "expenses-metrics__status_red";
 
 const inputNode = document.querySelector(".js-expense-adder__input");
 const buttonNode = document.querySelector(".js-expense-adder__button");
@@ -10,8 +10,9 @@ const historyNode = document.querySelector(".js-expenses-history__list-wrap");
 const sumNode = document.querySelector(".js-expenses-metrics__sum");
 const limitNode = document.querySelector(".js-expenses-metrics__limit");
 const statusNode = document.querySelector(".js-expenses-metrics__status");
+const resetNode = document.querySelector('.js-expense-reset-btn');
 
-const expenses = [];
+let expenses = [];
 
 init(expenses);
 
@@ -30,7 +31,7 @@ buttonNode.addEventListener("click", function () {
 function init(expenses) {
   limitNode.innerText = LIMIT;
   statusNode.innerText = STATUS_IN_LIMIT;
-  sumNode.innerText = calculateExpenses(expenses); 
+  sumNode.innerText = calculateExpenses(expenses);
 };
 
 function trackExpense(expense) {
@@ -86,13 +87,22 @@ function renderSum(sum) {
 };
 
 function renderStatus(sum) {
+  const total = calculateExpenses(expenses);
+
   if (sum <= LIMIT) {
     statusNode.innerText = STATUS_IN_LIMIT;
-    
+
     statusNode.classList.remove(STATUS_OUT_OF_LIMIT_CLASSNAME);
   } else {
-    statusNode.innerText = STATUS_OUT_OF_LIMIT;
+    statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - total} руб.)`;
 
     statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
   }
 };
+
+const resetBtnHandler = () => {
+  expenses = [];
+  render();
+};
+
+resetNode.addEventListener("click", resetBtnHandler);

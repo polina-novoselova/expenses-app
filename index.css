@@ -65,7 +65,7 @@ body {
 .expenses-category {
   display: block;
   padding: 5px 5px;
-  width: 320px;
+  width: 322px;
   height: 40px;
   cursor: pointer;
   background-color: #3b364b;
@@ -80,13 +80,14 @@ body {
 .expense-adder__button:focus,
 .expenses-category:hover,
 .expenses-category:focus,
-.expense-adder__input:hover, 
+.expense-adder__input:hover,
 .expense-adder__input:focus {
   border: 1px solid #292634;
   background-color: #5e5677;
 }
 
 .text-wrapper {
+  margin-bottom: 30px;
   display: flex;
   gap: 40px;
 }
@@ -127,28 +128,45 @@ body {
   color: #ffffff;
 }
 
-.expenses-history {
-}
-
 .expenses-history__title {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: aliceblue;
   font-size: 20px;
 }
 
 .expenses-history__list-wrap {
-  margin-left: 22px;
+ 
 }
 
 /* Класс для списка ol в JS */
 .expenses-history__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  list-style-position: inside;
 }
 
 /* Класс для элемента li списка в JS */
 .expenses-history__item {
   color: aliceblue;
   font-size: 20px;
+}
+
+.expense-reset-btn {
+  width: 320px;
+  height: 40px;
+  outline: none;
+  cursor: pointer;
+  background-color: #791157;
+  border: 1px solid #4f0b38;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.5s;
+}
+
+
+.expense-reset-btn:hover {
+background-color: #4f0b38;
+  border: 1px solid #4f0b38;
 }
