@@ -10,7 +10,8 @@ body {
 }
 
 .expenses-app {
-  width: 800px;
+  max-width: 100%;
+  width: 900px;
   padding: 80px 80px;
   border: 1px solid #545454;
 }
@@ -28,32 +29,35 @@ body {
 
 .expense-adder__input {
   display: block;
-  margin-right: 20px;
   padding: 5px 10px;
-  width: 300px;
+  outline: none;
+  width: 200px;
   height: 30px;
   background-color: #3b364b;
   border: 1px solid #292634;
-  border-radius: 5px;
-  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
   color: white;
   transition: all 0.5s;
 }
 
 .expense-adder__input::placeholder {
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   color: #ffffff;
   opacity: 0.5;
 }
 
 .expense-adder__button {
-  width: 150px;
+  width: 100px;
   outline: none;
   cursor: pointer;
   background-color: #3b364b;
   border: 1px solid #292634;
-  border-radius: 5px;
-  font-size: 18px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 16px;
   color: white;
   transition: all 0.5s;
 }
@@ -64,6 +68,7 @@ body {
 
 .expenses-category {
   display: block;
+  outline: none;
   padding: 5px 5px;
   width: 322px;
   height: 40px;
@@ -71,7 +76,7 @@ body {
   background-color: #3b364b;
   border: 1px solid #292634;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   transition: all 0.5s;
 }
@@ -96,22 +101,36 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 300px;
+  width: ;
+  
 }
 
-.expenses-metrics__limit {
-  color: aliceblue;
-  font-size: 20px;
+.expenses-metrics__limit-wrap {
+  display: flex;
+  gap: 10px;
 }
 
-.expenses-metrics__sum {
-  color: aliceblue;
-  font-size: 20px;
-}
-
+.expenses-metrics__limit,
+.expenses-metrics__sum,
 .expenses-metrics__status {
   color: aliceblue;
   font-size: 20px;
+}
+
+.change-limit-popup-btn-open {
+  margin-top: -3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-image: url(/change-limit_img.png);
+  background-size: cover;
+  filter: invert(1);
+}
+
+.change-limit-popup-btn-open:hover {
+  opacity: 0.5;
 }
 
 .expenses-metrics__status_green {
@@ -135,7 +154,6 @@ body {
 }
 
 .expenses-history__list-wrap {
- 
 }
 
 /* Класс для списка ol в JS */
@@ -165,8 +183,7 @@ body {
   transition: all 0.5s;
 }
 
-
 .expense-reset-btn:hover {
-background-color: #4f0b38;
+  background-color: #4f0b38;
   border: 1px solid #4f0b38;
 }

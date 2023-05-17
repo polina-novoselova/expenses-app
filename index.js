@@ -10,7 +10,8 @@ const historyNode = document.querySelector(".js-expenses-history__list-wrap");
 const sumNode = document.querySelector(".js-expenses-metrics__sum");
 const limitNode = document.querySelector(".js-expenses-metrics__limit");
 const statusNode = document.querySelector(".js-expenses-metrics__status");
-const resetNode = document.querySelector('.js-expense-reset-btn');
+const resetNode = document.querySelector(".js-expense-reset-btn");
+const categoryNode = document.querySelector(".js-expenses-category");
 
 let expenses = [];
 
@@ -32,11 +33,12 @@ function init(expenses) {
   limitNode.innerText = LIMIT;
   statusNode.innerText = STATUS_IN_LIMIT;
   sumNode.innerText = calculateExpenses(expenses);
-};
+}
 
 function trackExpense(expense) {
-  expenses.push(expense);
-};
+  const category = categoryNode.value;
+  expenses.push({ expense, category });
+}
 
 function getExpenseFromUser() {
   if (!inputNode.value) {
@@ -48,21 +50,21 @@ function getExpenseFromUser() {
   clearinput();
 
   return expense;
-};
+}
 
 function clearinput() {
   inputNode.value = "";
-};
+}
 
 function calculateExpenses(expenses) {
   let sum = 0;
 
   expenses.forEach((element) => {
-    sum += element;
+    sum += element.expense;
   });
 
   return sum;
-};
+}
 
 function render(expenses) {
   const sum = calculateExpenses(expenses);
@@ -70,21 +72,21 @@ function render(expenses) {
   renderHistory(expenses);
   renderSum(sum);
   renderStatus(sum);
-};
+}
 
 function renderHistory(expenses) {
   let expensesListHTML = "";
 
   expenses.forEach((element) => {
-    expensesListHTML += `<li class="expenses-history__item">${element} ${CURRENCY}</li>`;
+    expensesListHTML += `<li class="expenses-history__item">${element.category}: ${element.expense} ${CURRENCY}</li>`;
   });
 
   historyNode.innerHTML = `<ol class="expenses-history__list">${expensesListHTML}</ol>`;
-};
+}
 
 function renderSum(sum) {
   sumNode.innerText = sum;
-};
+}
 
 function renderStatus(sum) {
   const total = calculateExpenses(expenses);
@@ -98,11 +100,11 @@ function renderStatus(sum) {
 
     statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
   }
-};
+}
 
 const resetBtnHandler = () => {
   expenses = [];
-  render();
+  render(expenses);
 };
 
 resetNode.addEventListener("click", resetBtnHandler);
