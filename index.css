@@ -1,19 +1,24 @@
 @import url(/change-limit_popup.css);
+
 body {
   margin: 0 auto;
   padding: 100px 100px;
   background-color: #343434;
   font-family: "Montserrat", sans-serif;
+  background-image: url(https://abrakadabra.fun/uploads/posts/2022-02/1644800847_1-abrakadabra-fun-p-temnii-estetichnii-fon-2.jpg);
+  background-size: cover;
 }
 
 .main {
   margin: 0 auto;
 }
-
+/*flex*/
 .expenses-app {
-  max-width: 100%;
-  width: 900px;
-  padding: 80px 80px;
+  display: flex;
+  margin: 0 auto;
+  width: 850px;
+  padding: 60px 80px;
+  justify-content: space-between;
   border: 1px solid #545454;
 }
 
@@ -64,7 +69,7 @@ body {
 }
 
 .expenses-category-wrap {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .expenses-category {
@@ -77,7 +82,7 @@ body {
   background-color: #3b364b;
   border: 1px solid #292634;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   transition: all 0.5s;
 }
@@ -92,7 +97,7 @@ body {
   background-color: #5e5677;
 }
 
-.text-wrapper {
+.metrics-wrapper {
   margin-bottom: 30px;
   display: flex;
   gap: 40px;
@@ -101,7 +106,7 @@ body {
 .expenses-metrics {
   display: flex;
   flex-direction: column;
-  gap: 10px;  
+  gap: 10px;
 }
 
 .expenses-metrics__limit-wrap {
@@ -110,6 +115,7 @@ body {
   gap: 10px;
   padding: 10px;
   border: 1px solid #545454;
+  border-radius: 5px;
 }
 
 .expenses-metrics__limit {
@@ -124,6 +130,7 @@ body {
   color: aliceblue;
   font-size: 20px;
   border: 1px solid #545454;
+  border-radius: 5px;
 }
 
 .change-limit-popup-btn-open {
@@ -156,11 +163,61 @@ body {
   color: #ffffff;
 }
 
+.right-block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extra-block {
+  margin-top: 60px;
+  display: flex;
+}
+
+.calendar {
+  margin-top: -8px;
+  width: 150px;
+  height: 105px;
+  background-image: url(/calendar-img.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(0.88);
+}
+
+.notes {
+  display: block;
+  padding: 0 5px;
+  outline: none;
+  width: 170px;
+  height: 92px;
+  background-color: #122f28;
+  border: 1px solid #0f2520;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  transition: all 0.5s;
+}
+
+.notes:hover {
+  background-color: #1d4b40;
+  border: 1px solid #122f28;
+}
+
+.notes::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
 .expenses-history {
+  margin-top: -5px;
   width: 320px;
   height: 173px;
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px solid #545454;
+  border-radius: 5px;
   background-color: #3b364b;
   overflow-y: auto;
 }
@@ -185,7 +242,7 @@ body {
 }
 
 .expenses-history__title {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: aliceblue;
   font-size: 18px;
 }
@@ -203,6 +260,22 @@ body {
   font-size: 16px;
 }
 
+.adverts-spot {
+  width: 320px;
+  height: 180px;
+  padding: 10px 15px;
+  border: 1px solid #545454;
+  border-radius: 5px;
+}
+
+.adverts-text {
+  margin-top: 55px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: white;
+}
+
 .expense-reset-btn,
 .btn-last-expense {
   width: 320px;
@@ -218,13 +291,13 @@ body {
 }
 
 .btn-last-expense {
-  background-color: #0c5744;
-  border: 1px solid #0c5744;
+  background-color: #122f28;
+  border: 1px solid #0f2520;
 }
 
 .btn-last-expense:hover {
-  background-color: #118367;
-  border: 1px solid #118367;
+  background-color: #1d4b40;
+  border: 1px solid #122f28;
 }
 
 .expense-reset-btn:hover {

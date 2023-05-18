@@ -20,52 +20,64 @@
   <body>
     <main class="main">
       <div class="expenses-app">
-        <h1 class="expenses__title">Учет расходов</h1>
-        <div class="expense-adder">
-          <input
-            class="js-expense-adder__input expense-adder__input"
-            type="number"
-            placeholder="Введите сумму траты"
-          />
-          <button class="js-expense-adder__button expense-adder__button">
-            Добавить
-          </button>
-        </div>
-        <div class="expenses-category-wrap">
-          <select class="js-expenses-category expenses-category">
-            <option>Транспорт</option>
-            <option>Развлечения</option>
-            <option>Кафе и рестораны</option>
-            <option>Супермаркеты</option>
-            <option>Одежда</option>
-            <option>Техника</option>
-          </select>
-        </div>
-        <div class="text-wrapper">
-          <div class="expenses-metrics">
-            <div class="expenses-metrics__limit-wrap">
-              <p class="expenses-metrics__limit">
-                Доступный лимит: <br> <span class="js-expenses-metrics__limit"></span> руб.
+        <div class="first-column">
+          <h1 class="expenses__title">Учет расходов</h1>
+          <div class="expense-adder">
+            <input
+              class="js-expense-adder__input expense-adder__input"
+              type="number"
+              min="0"
+              placeholder="Введите сумму траты"
+            />
+            <button class="js-expense-adder__button expense-adder__button">
+              Добавить
+            </button>
+          </div>
+          <div class="expenses-category-wrap">
+            <select class="js-expenses-category expenses-category">
+              <option>Транспорт</option>
+              <option>Развлечения</option>
+              <option>Кафе и рестораны</option>
+              <option>Супермаркеты</option>
+              <option>Одежда</option>
+              <option>Техника</option>
+              <option class="js-top-up">ПОПОЛНЕНИЕ</option>
+            </select>
+          </div>
+          <div class="metrics-wrapper">
+            <div class="expenses-metrics">
+              <div class="expenses-metrics__limit-wrap">
+                <p class="expenses-metrics__limit">
+                  Доступный лимит: <br />
+                  <span class="js-expenses-metrics__limit"></span> руб.
+                </p>
+                <button
+                  class="js-change-limit-popup-btn-open change-limit-popup-btn-open"
+                ></button>
+              </div>
+              <p class="expenses-metrics__sum">
+                Сумма трат: <br />
+                <span class="js-expenses-metrics__sum"></span> руб.
               </p>
-              <button
-                class="js-change-limit-popup-btn-open change-limit-popup-btn-open"
-              ></button>
+              <p class="expenses-metrics__status">
+                Статус лимита: <br />
+                <span
+                  class="js-expenses-metrics__status expenses-metrics__status_green"
+                ></span>
+              </p>
+              <button class="js-expense-reset-btn expense-reset-btn">
+                Сбросить сумму трат
+              </button>
+              <button class="js-btn-last-expense btn-last-expense">
+                Отменить последнюю трату
+              </button>
             </div>
-            <p class="expenses-metrics__sum">
-              Сумма трат: <br> <span class="js-expenses-metrics__sum"></span> руб.
-            </p>
-            <p class="expenses-metrics__status">
-              Статус лимита: <br>
-              <span
-                class="js-expenses-metrics__status expenses-metrics__status_green"
-              ></span>
-            </p>
-            <button class="js-expense-reset-btn expense-reset-btn">
-              Сбросить сумму трат
-            </button>
-            <button class="js-btn-last-expense btn-last-expense">
-              Отменить последнюю трату
-            </button>
+          </div>
+        </div>
+        <div class="right-block-wrap">
+          <div class="extra-block">
+            <div class="calendar"></div>
+            <textarea class="notes" name="text" cols="13" rows="3">Заметки:</textarea>
           </div>
           <div class="expenses-history">
             <h2 class="expenses-history__title">История:</h2>
@@ -73,14 +85,27 @@
               class="js-expenses-history__list-wrap expenses-history__list-wrap"
             ></div>
           </div>
+          <div class="adverts-spot">
+            <p class="adverts-text">
+              ▐ Здесь могла быть ваша реклама... <br />
+              ▐ но будет моя... <br />
+              ▐ но потом...
+            </p>
+          </div>
         </div>
       </div>
       <div class="js-change-limit-popup change-limit-popup">
         <div class="popup-content">
           <p class="popup__title">Введите новый лимит</p>
           <button class="js-popup-btn-close popup-btn-close"></button>
-          <input class="js-input-new-limit input-new-limit" type="number" placeholder="Введите сумму лимита" />
-          <button class="js-popup-btn-change-limit popup-btn-change-limit">Изменить лимит</button>
+          <input
+            class="js-input-new-limit input-new-limit"
+            type="number"
+            placeholder="Введите сумму лимита"
+          />
+          <button class="js-popup-btn-change-limit popup-btn-change-limit">
+            Изменить лимит
+          </button>
         </div>
       </div>
       <script src="index.js"></script>
