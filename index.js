@@ -1,8 +1,9 @@
-const LIMIT = 10000;
+let limit = 10000;
 const CURRENCY = "руб.";
 const STATUS_IN_LIMIT = "доступен";
 const STATUS_OUT_OF_LIMIT = "превышен";
 const STATUS_OUT_OF_LIMIT_CLASSNAME = "expenses-metrics__status_red";
+const CHANGE_LIMIT_POPUP_OPEN = "js-popup-open";
 
 const inputNode = document.querySelector(".js-expense-adder__input");
 const buttonNode = document.querySelector(".js-expense-adder__button");
@@ -12,6 +13,16 @@ const limitNode = document.querySelector(".js-expenses-metrics__limit");
 const statusNode = document.querySelector(".js-expenses-metrics__status");
 const resetNode = document.querySelector(".js-expense-reset-btn");
 const categoryNode = document.querySelector(".js-expenses-category");
+const changeLimitPopUpBtnOpenNode = document.querySelector(
+  ".js-change-limit-popup-btn-open"
+);
+const changeLimitPopupNode = document.querySelector(".change-limit-popup");
+const changeLimitPopupCloseBtnNode = document.querySelector(
+  ".js-popup-btn-close"
+);
+const changeLimitBtnNode = document.querySelector(".js-popup-btn-change-limit");
+const inputNewLimitNode = document.querySelector(".js-input-new-limit");
+const delLastExpenseNode = document.querySelector(".js-btn-last-expense");
 
 let expenses = [];
 
@@ -30,7 +41,7 @@ buttonNode.addEventListener("click", function () {
 });
 
 function init(expenses) {
-  limitNode.innerText = LIMIT;
+  limitNode.innerText = limit;
   statusNode.innerText = STATUS_IN_LIMIT;
   sumNode.innerText = calculateExpenses(expenses);
 }
@@ -91,12 +102,12 @@ function renderSum(sum) {
 function renderStatus(sum) {
   const total = calculateExpenses(expenses);
 
-  if (sum <= LIMIT) {
+  if (sum <= limit) {
     statusNode.innerText = STATUS_IN_LIMIT;
 
     statusNode.classList.remove(STATUS_OUT_OF_LIMIT_CLASSNAME);
   } else {
-    statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - total} руб.)`;
+    statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${limit - total} руб.)`;
 
     statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
   }
@@ -108,3 +119,38 @@ const resetBtnHandler = () => {
 };
 
 resetNode.addEventListener("click", resetBtnHandler);
+
+changeLimitPopUpBtnOpenNode.addEventListener("click", popupChangeLimitOpen);
+
+function popupChangeLimitOpen() {
+  changeLimitPopupNode.classList.add(CHANGE_LIMIT_POPUP_OPEN);
+}
+
+changeLimitPopupCloseBtnNode.addEventListener("click", popupChangeLimitClose);
+
+function popupChangeLimitClose() {
+  changeLimitPopupNode.classList.remove(CHANGE_LIMIT_POPUP_OPEN);
+}
+
+changeLimitBtnNode.addEventListener("click", getLimitFromUser);
+
+function getLimitFromUser() {
+  if (!inputNewLimitNode.value) {
+    limit = limit;
+  } else {
+    limit = parseInt(inputNewLimitNode.value);
+
+    limitNode.innerText = limit;
+
+    popupChangeLimitClose();
+    render(expenses);
+  }
+}
+
+delLastExpenseNode.addEventListener("click", delLastExpense);
+
+function delLastExpense() {
+  expenses.pop();
+
+  render(expenses);
+}

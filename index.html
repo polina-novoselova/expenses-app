@@ -25,7 +25,7 @@
           <input
             class="js-expense-adder__input expense-adder__input"
             type="number"
-            placeholder="Введите сумму"
+            placeholder="Введите сумму траты"
           />
           <button class="js-expense-adder__button expense-adder__button">
             Добавить
@@ -45,23 +45,26 @@
           <div class="expenses-metrics">
             <div class="expenses-metrics__limit-wrap">
               <p class="expenses-metrics__limit">
-                Лимит: <span class="js-expenses-metrics__limit"></span> руб.
+                Доступный лимит: <br> <span class="js-expenses-metrics__limit"></span> руб.
               </p>
               <button
                 class="js-change-limit-popup-btn-open change-limit-popup-btn-open"
               ></button>
             </div>
             <p class="expenses-metrics__sum">
-              Сумма: <span class="js-expenses-metrics__sum"></span> руб.
+              Сумма трат: <br> <span class="js-expenses-metrics__sum"></span> руб.
             </p>
             <p class="expenses-metrics__status">
-              Статус:
+              Статус лимита: <br>
               <span
                 class="js-expenses-metrics__status expenses-metrics__status_green"
               ></span>
             </p>
             <button class="js-expense-reset-btn expense-reset-btn">
-              Сбросить сумму
+              Сбросить сумму трат
+            </button>
+            <button class="js-btn-last-expense btn-last-expense">
+              Отменить последнюю трату
             </button>
           </div>
           <div class="expenses-history">
@@ -74,8 +77,10 @@
       </div>
       <div class="js-change-limit-popup change-limit-popup">
         <div class="popup-content">
-          <p class="popup__title">Изменить лимит</p>
-          <input class="input-new-limit" type="number" />
+          <p class="popup__title">Введите новый лимит</p>
+          <button class="js-popup-btn-close popup-btn-close"></button>
+          <input class="js-input-new-limit input-new-limit" type="number" placeholder="Введите сумму лимита" />
+          <button class="js-popup-btn-change-limit popup-btn-change-limit">Изменить лимит</button>
         </div>
       </div>
       <script src="index.js"></script>
