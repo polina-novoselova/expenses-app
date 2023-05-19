@@ -91,7 +91,7 @@
   height: 35px;
   background: none;
   border: none;
-  background: url(/change-limit-close-btn.png) no-repeat center / cover;
+  background: url(change-limit-close-btn.png) no-repeat center / cover;
   filter: invert(1);
   transition: all 0.3s ease;
 }
